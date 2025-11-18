@@ -10,6 +10,8 @@ import { addTexturedMeshes } from './addTexturedMeshes';
 import { addPhongMesh } from './addphongmesh.js';
 import { addStandardMesh } from './addstandardmesh.js';
 import { addPhysicalMesh } from './addPhysicalMesh.js';
+import Model from './Model.js';
+import { SceneNode } from 'three/webgpu';
 
 
 const scene = new THREE.Scene()
@@ -24,6 +26,8 @@ const Clock = new THREE.Clock();
 camera.position.set(0, 0, 5)
 const renderer = new THREE.WebGLRenderer({ antialias: true })
 const meshes = {}
+const mixers = []
+
 
 init()
 function init() {
@@ -51,8 +55,24 @@ const light = new THREE.DirectionalLight(0xffffff, 3);
 light.position.set(5, 5, 5);
 scene.add(light);
 
+instances()
 animate()
 }
+function instances(){
+    const flower =new Model({
+        scene: scene,
+        meshes: meshes,
+        name: 'flower',
+        url: '/flowers.glb',
+        scale: new THREE.Vector3(2,2,2),
+        position: new THREE.Vector3 (-0,-0.8,3),
+        animationState: true,
+        mixers: mixers,
+
+
+    } )
+flower.init()
+} 
 
 function animate() {
 // meshes.default.position.x += 0.1
@@ -78,14 +98,19 @@ meshes.texturedMeshes.material.displacementScale =
 //meshes.planetThree.rotation.x += 0.003
 //meshes.planetThree.rotation.z -= 0.003
 
+// const delta = Clock.getDelta();
+for (const mixer of mixers) {
+    // console.log(mixer)
+    mixer.update(Clock.getDelta());
+}
 renderer.render(scene, camera)
 
 
 
 
 
+// console.log(delta)
 
-meshes.textureMesh.material.displacementScale -= 0.001;
 
 
 }
