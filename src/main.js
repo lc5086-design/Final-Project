@@ -1,21 +1,21 @@
 import './style.css'
 import * as THREE from 'three'
-import { addDefaultMeshes } from './addDefaultMeshes'
-import { addsphereMeshes } from './addspheremeshes'
+// import { addDefaultMeshes } from './addDefaultMeshes'f
+// import { addsphereMeshes } from './addspheremeshes'
 
-import { GeometryCompressionUtils } from 'three/examples/jsm/Addons.js'
-import { addTexturedMeshes } from './addTexturedMeshes'
+// import { GeometryCompressionUtils } from 'three/examples/jsm/Addons.js'
+// import { addTexturedMeshes } from './addTexturedMeshes'
 // addTexturedMesh
-import { addPhongMesh } from './addphongmesh.js'
-import { addStandardMesh } from './addstandardmesh.js'
-import { addPhysicalMesh } from './addPhysicalMesh.js'
+// import { addPhongMesh } from './addphongmesh.js'
+// import { addStandardMesh } from './addstandardmesh.js'
+// import { addPhysicalMesh } from './addPhysicalMesh.js'
 import Model from './Model.js'
-import { SceneNode } from 'three/webgpu'
-import { HDRI } from './environment.js'
+// import { SceneNode } from 'three/webgpu'
+// import { HDRI } from './environment.js'
 import { WheelAdaptor } from 'three-story-controls'
 import gsap from 'gsap'
 import { postprocessing } from './postprocessing.js'
-import { OrbitControls } from 'three/examples/jsm/Addons.js'
+// import { OrbitControls } from 'three/examples/jsm/Addons.js'
 
 // x
 // :
