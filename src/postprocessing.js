@@ -1,6 +1,6 @@
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
-import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass'
+//import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass'
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass'
 import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass'
 import { AfterimagePass } from 'three/examples/jsm/postprocessing/AfterimagePass'
@@ -36,15 +36,15 @@ export function postprocessing(scene, camera, renderer) {
 	afterPass.damp = 0
 	composer.addPass(afterPass)
 
-	const glitchPass = new GlitchPass()
-	glitchPass.enabled = true
-	glitchPass.goWild = true
-	composer.addPass(glitchPass)
-	const outlinePass = new OutlinePass(
-	new Vector2(window.innerWidth, window.innerHeight),
-	scene,
-	camera
-	)
+	// // const glitchPass = new GlitchPass()
+	// glitchPass.enabled = true
+	// glitchPass.goWild = true
+	// composer.addPass(glitchPass)
+	// const outlinePass = new OutlinePass(
+	// new Vector2(window.innerWidth, window.innerHeight),
+	// scene,
+	// camera
+	// )
 	// composer.addPass(outlinePass)
 
 	return {
